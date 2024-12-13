@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { InView } from "react-intersection-observer";
 import "tailwindcss/tailwind.css";
 
@@ -77,14 +78,16 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5 }}
           >
-            Professional and Minimalistic Design.
+            Hi, I'm Vishal Kumar, a final-year Electrical Engineering student at IIT Indore, passionate about web development and software engineering.
           </motion.p>
-          <motion.button
-            className="mt-8 px-6 py-3 bg-gray-800 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
-            whileHover={{ scale: 1.2 }}
-          >
-            Explore My Work
-          </motion.button>
+          <Link href="#projects">
+            <motion.button
+              className="mt-8 px-6 py-3 bg-gray-800 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
+              whileHover={{ scale: 1.2 }}
+            >
+              Explore My Work
+            </motion.button>
+          </Link>
         </div>
       </section>
 
@@ -102,7 +105,7 @@ export default function Home() {
             <div className="relative z-10 max-w-2xl mx-auto text-center">
               <h2 className="text-4xl font-bold text-gray-800">About Me</h2>
               <p className="mt-4 text-gray-600 text-lg">
-                Dedicated to creating scalable and impactful solutions.
+                I'm Vishal Kumar, a final-year Electrical Engineering student at IIT Indore. With a strong foundation in engineering principles, I've developed a keen interest in web and software development. My goal is to create scalable, efficient, and impactful solutions.
               </p>
             </div>
           </motion.section>
@@ -123,6 +126,8 @@ export default function Home() {
               "Tailwind CSS",
               "Framer Motion",
               "MongoDB",
+              "Python",
+              "C++",
             ].map((skill, index) => (
               <motion.div
                 key={skill}
@@ -150,6 +155,7 @@ export default function Home() {
             animate={inView ? "visible" : "hidden"}
             variants={animationVariants}
             transition={{ duration: 1.5 }}
+            id="projects"
           >
             <div className="relative z-10">
               <h2 className="text-4xl font-semibold text-gray-800">Projects</h2>
@@ -186,15 +192,32 @@ export default function Home() {
             <div className="relative z-10 text-center">
               <h2 className="text-4xl font-bold text-gray-800">Get in Touch</h2>
               <p className="mt-4 text-gray-600 text-lg">
-                Feel free to reach out and connect!
+                Let's connect and discuss opportunities to work together. I'm always open to learning and contributing to exciting projects.
               </p>
-              <motion.a
-                href="mailto:youremail@example.com"
-                className="mt-6 inline-block px-8 py-3 bg-gray-800 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
-                whileHover={{ scale: 1.2 }}
-              >
-                Contact Me
-              </motion.a>
+              <div className="flex justify-center gap-4">
+
+                <motion.a
+                  href="mailto:vishal.kumar@example.com"
+                  className="mt-6 inline-block px-8 py-3 bg-gray-800 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
+                  whileHover={{ scale: 1.2 }}
+                >
+                  Contact Me
+                </motion.a>
+                <motion.a
+                  href="mailto:vishal.kumar@example.com"
+                  className="mt-6 inline-block px-8 py-3 bg-gray-800 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
+                  whileHover={{ scale: 1.2 }}
+                >
+                  Contact Me
+                </motion.a>
+                <motion.a
+                  href="mailto:vishal.kumar@example.com"
+                  className="mt-6 inline-block px-8 py-3 bg-gray-800 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
+                  whileHover={{ scale: 1.2 }}
+                >
+                  Contact Me
+                </motion.a>
+              </div>
             </div>
           </motion.section>
         )}
@@ -202,7 +225,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-800 text-gray-300 py-4 text-center">
-        <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Vishal. All rights reserved.</p>
       </footer>
     </div>
   );
