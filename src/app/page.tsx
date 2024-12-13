@@ -1,100 +1,174 @@
-import Image from "next/image";
+"use client";
+import { motion } from "framer-motion";
+import { InView } from "react-intersection-observer";
+import "tailwindcss/tailwind.css";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="font-sans snap-y snap-mandatory h-screen overflow-y-scroll relative">
+      {/* Custom Scrollbar */}
+      <style>
+        {`
+          ::-webkit-scrollbar {
+            width: 12px;
+          }
+          ::-webkit-scrollbar-track {
+            background: #1f2937;
+          }
+          ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #3b82f6, #06b6d4);
+            border-radius: 6px;
+          }
+          ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #2563eb, #0891b2);
+          }
+        `}
+      </style>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Scroll Progress Indicator */}
+      <div className="fixed top-0 left-0 w-2 h-screen bg-gray-800">
+        <motion.div
+          className="bg-gradient-to-b from-blue-500 to-teal-400 w-full"
+          style={{ scaleY: 0 }}
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        ></motion.div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen snap-start bg-gradient-to-r from-gray-800 via-gray-700 to-black flex items-center justify-center text-white">
+        <motion.div
+          className="absolute inset-0 bg-hero-pattern bg-cover bg-center blur-lg"
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        ></motion.div>
+        <div className="relative z-10 text-center">
+          <motion.h1
+            className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Hi, I’m a Software Developer
+          </motion.h1>
+          <motion.p
+            className="mt-4 text-lg text-gray-400"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
           >
-            Read our docs
-          </a>
+            Crafting seamless digital experiences with cutting-edge technology.
+          </motion.p>
+          <motion.button
+            className="mt-8 px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
+            whileHover={{ scale: 1.1 }}
+          >
+            View My Projects
+          </motion.button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* About Section */}
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <motion.section
+            ref={ref}
+            className="relative min-h-screen snap-start bg-gray-100 p-8 flex items-center justify-center overflow-hidden"
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1 }}
+          >
+            <div className="relative z-10 max-w-2xl mx-auto text-center">
+              <h2 className="text-4xl font-bold text-gray-800">About Me</h2>
+              <p className="mt-4 text-gray-600 text-lg">
+                Passionate about designing and developing scalable software solutions that create real-world impact.
+              </p>
+            </div>
+          </motion.section>
+        )}
+      </InView>
+
+      {/* Skills Section */}
+      <section className="relative min-h-screen snap-start bg-gray-900 text-gray-200 py-12 flex flex-col items-center overflow-hidden">
+        <div className="relative z-10">
+          <h2 className="text-4xl font-semibold text-blue-400 mb-6">Skills</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              "JavaScript",
+              "TypeScript",
+              "React",
+              "Next.js",
+              "Node.js",
+              "Tailwind CSS",
+              "Framer Motion",
+              "MongoDB",
+            ].map((skill, index) => (
+              <motion.div
+                key={skill}
+                className="p-4 bg-gray-800 text-center rounded-md shadow-lg"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                {skill}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <motion.section
+            ref={ref}
+            className="relative min-h-screen snap-start bg-gray-100 p-8 flex items-center justify-center overflow-hidden"
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1 }}
+          >
+            <div className="relative z-10">
+              <h2 className="text-4xl font-semibold text-gray-800">Projects</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                {[1, 2, 3, 4].map((project) => (
+                  <motion.div
+                    key={project}
+                    className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Project {project}</h3>
+                    <p className="text-gray-600 text-sm">
+                      A brief description of the project with key features and impact.
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.section>
+        )}
+      </InView>
+
+      {/* Contact Section */}
+      <section className="relative min-h-screen snap-start bg-gradient-to-b from-gray-800 to-black text-white flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-4xl font-semibold text-blue-400">Get in Touch</h2>
+          <p className="mt-4 text-gray-400">I&apos;d love to hear from you! Let&apos;s connect.</p>
+          <motion.a
+            href="mailto:youremail@example.com"
+            className="mt-6 inline-block px-8 py-3 bg-blue-600 rounded-md text-white font-semibold shadow-md hover:shadow-lg"
+            whileHover={{ scale: 1.1 }}
+          >
+            Contact Me
+          </motion.a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-400 py-4 text-center">
+        <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
       </footer>
     </div>
   );
