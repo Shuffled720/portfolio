@@ -10,17 +10,17 @@ export default function Home() {
       <style>
         {`
           ::-webkit-scrollbar {
-            width: 12px;
+            width: 10px;
           }
           ::-webkit-scrollbar-track {
-            background: #1f2937;
+            background: #1e293b;
           }
           ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #3b82f6, #06b6d4);
-            border-radius: 6px;
+            background: #0ea5e9;
+            border-radius: 5px;
           }
           ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #2563eb, #0891b2);
+            background: #0284c7;
           }
         `}
       </style>
@@ -28,7 +28,7 @@ export default function Home() {
       {/* Scroll Progress Indicator */}
       <div className="fixed top-0 left-0 w-2 h-screen bg-gray-800">
         <motion.div
-          className="bg-gradient-to-b from-blue-500 to-teal-400 w-full"
+          className="bg-cyan-500 w-full"
           style={{ scaleY: 0 }}
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
@@ -37,16 +37,16 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen snap-start bg-gradient-to-r from-gray-800 via-gray-700 to-black flex items-center justify-center text-white">
+      <section className="relative min-h-screen snap-start bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 flex items-center justify-center text-white">
         <motion.div
-          className="absolute inset-0 bg-hero-pattern bg-cover bg-center blur-lg"
+          className="absolute inset-0 bg-hero-pattern bg-cover bg-center blur-sm"
           initial={{ scale: 1.2, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
         ></motion.div>
         <div className="relative z-10 text-center">
           <motion.h1
-            className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"
+            className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-cyan-600"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -54,7 +54,7 @@ export default function Home() {
             Hi, I’m a Software Developer
           </motion.h1>
           <motion.p
-            className="mt-4 text-lg text-gray-400"
+            className="mt-4 text-lg text-cyan-200"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -62,7 +62,7 @@ export default function Home() {
             Crafting seamless digital experiences with cutting-edge technology.
           </motion.p>
           <motion.button
-            className="mt-8 px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
+            className="mt-8 px-6 py-3 bg-cyan-600 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
             whileHover={{ scale: 1.1 }}
           >
             View My Projects
@@ -91,9 +91,9 @@ export default function Home() {
       </InView>
 
       {/* Skills Section */}
-      <section className="relative min-h-screen snap-start bg-gray-900 text-gray-200 py-12 flex flex-col items-center overflow-hidden">
+      <section className="relative min-h-screen snap-start bg-gray-800 text-cyan-200 py-12 flex flex-col items-center overflow-hidden">
         <div className="relative z-10">
-          <h2 className="text-4xl font-semibold text-blue-400 mb-6">Skills</h2>
+          <h2 className="text-4xl font-semibold text-cyan-400 mb-6">Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               "JavaScript",
@@ -107,7 +107,7 @@ export default function Home() {
             ].map((skill, index) => (
               <motion.div
                 key={skill}
-                className="p-4 bg-gray-800 text-center rounded-md shadow-lg"
+                className="p-4 bg-gray-700 text-center rounded-md shadow-lg"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -152,13 +152,13 @@ export default function Home() {
       </InView>
 
       {/* Contact Section */}
-      <section className="relative min-h-screen snap-start bg-gradient-to-b from-gray-800 to-black text-white flex items-center justify-center">
+      <section className="relative min-h-screen snap-start bg-gray-900 text-white flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-4xl font-semibold text-blue-400">Get in Touch</h2>
-          <p className="mt-4 text-gray-400">I&apos;d love to hear from you! Let&apos;s connect.</p>
+          <h2 className="text-4xl font-semibold text-cyan-400">Get in Touch</h2>
+          <p className="mt-4 text-cyan-200">I&apos;d love to hear from you! Let&apos;s connect.</p>
           <motion.a
             href="mailto:youremail@example.com"
-            className="mt-6 inline-block px-8 py-3 bg-blue-600 rounded-md text-white font-semibold shadow-md hover:shadow-lg"
+            className="mt-6 inline-block px-8 py-3 bg-cyan-600 rounded-md text-white font-semibold shadow-md hover:shadow-lg"
             whileHover={{ scale: 1.1 }}
           >
             Contact Me
@@ -167,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-4 text-center">
+      <footer className="bg-gray-800 text-cyan-200 py-4 text-center">
         <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
       </footer>
     </div>
