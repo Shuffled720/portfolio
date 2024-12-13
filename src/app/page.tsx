@@ -9,13 +9,8 @@ export default function Home() {
     hidden: { opacity: 0, y: 50, scale: 0.9 },
   };
 
-  const alternateAnimationVariants = {
-    visible: { opacity: 1, x: 0, rotate: 0 },
-    hidden: { opacity: 0, x: -100, rotate: -10 },
-  };
-
   return (
-    <div className="font-sans snap-y snap-mandatory h-screen overflow-y-scroll relative">
+    <div className="font-sans snap-y snap-mandatory h-screen overflow-y-scroll relative bg-gray-50 scroll-smooth">
       {/* Custom Scrollbar */}
       <style>
         {`
@@ -33,31 +28,17 @@ export default function Home() {
           ::-webkit-scrollbar-thumb:hover {
             background: #555;
           }
+          html {
+            scroll-behavior: smooth;
+          }
         `}
       </style>
 
-      {/* Scroll Progress Indicator */}
-      <div className="fixed top-0 left-0 w-1 h-screen bg-gray-300">
-        <motion.div
-          className="bg-gray-600 w-full"
-          style={{ scaleY: 0 }}
-          initial={{ scaleY: 0 }}
-          animate={{ scaleY: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        ></motion.div>
-      </div>
-
       {/* Hero Section */}
-      <section className="relative min-h-screen snap-start bg-white flex items-center justify-center">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-300 to-gray-400 animate-pulse"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 2 }}
-        ></motion.div>
+      <section className="relative min-h-screen snap-start bg-gray-50 flex items-center justify-center">
         <div className="relative z-10 text-center">
           <motion.h1
-            className="text-5xl md:text-6xl font-bold text-gray-700"
+            className="text-5xl md:text-6xl font-bold text-gray-800"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5 }}
@@ -65,15 +46,15 @@ export default function Home() {
             Welcome to My Portfolio
           </motion.h1>
           <motion.p
-            className="mt-4 text-lg text-gray-500"
+            className="mt-4 text-lg text-gray-600"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5 }}
           >
-            Minimalistic and Professional Design.
+            Professional and Minimalistic Design.
           </motion.p>
           <motion.button
-            className="mt-8 px-6 py-3 bg-gray-700 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
+            className="mt-8 px-6 py-3 bg-gray-800 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
             whileHover={{ scale: 1.2 }}
           >
             Explore My Work
@@ -86,16 +67,16 @@ export default function Home() {
         {({ inView, ref }) => (
           <motion.section
             ref={ref}
-            className="relative min-h-screen snap-start bg-gray-100 p-8 flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen snap-start bg-gray-50 p-8 flex items-center justify-center overflow-hidden"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            variants={alternateAnimationVariants}
+            variants={animationVariants}
             transition={{ duration: 1.5 }}
           >
             <div className="relative z-10 max-w-2xl mx-auto text-center">
-              <h2 className="text-4xl font-bold text-gray-700">About Me</h2>
+              <h2 className="text-4xl font-bold text-gray-800">About Me</h2>
               <p className="mt-4 text-gray-600 text-lg">
-                Passionate about designing and developing scalable solutions for impactful results.
+                Dedicated to creating scalable and impactful solutions.
               </p>
             </div>
           </motion.section>
@@ -103,7 +84,7 @@ export default function Home() {
       </InView>
 
       {/* Skills Section */}
-      <section className="relative min-h-screen snap-start bg-gray-200 text-gray-700 py-12 flex flex-col items-center overflow-hidden">
+      <section className="relative min-h-screen snap-start bg-gray-50 text-gray-800 py-12 flex flex-col items-center overflow-hidden">
         <div className="relative z-10">
           <h2 className="text-4xl font-semibold mb-6">Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -138,14 +119,14 @@ export default function Home() {
         {({ inView, ref }) => (
           <motion.section
             ref={ref}
-            className="relative min-h-screen snap-start bg-gray-100 p-8 flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen snap-start bg-gray-50 p-8 flex items-center justify-center overflow-hidden"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            variants={alternateAnimationVariants}
+            variants={animationVariants}
             transition={{ duration: 1.5 }}
           >
             <div className="relative z-10">
-              <h2 className="text-4xl font-semibold text-gray-700">Projects</h2>
+              <h2 className="text-4xl font-semibold text-gray-800">Projects</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 {[1, 2, 3, 4].map((project) => (
                   <motion.div
@@ -153,9 +134,9 @@ export default function Home() {
                     className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg"
                     whileHover={{ scale: 1.1 }}
                   >
-                    <h3 className="text-xl font-semibold mb-2 text-gray-700">Project {project}</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Project {project}</h3>
                     <p className="text-gray-600 text-sm">
-                      A brief description of the project with key features and impact.
+                      Brief details about the project and its impact.
                     </p>
                   </motion.div>
                 ))}
@@ -166,22 +147,35 @@ export default function Home() {
       </InView>
 
       {/* Contact Section */}
-      <section className="relative min-h-screen snap-start bg-gray-800 text-white flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-4xl font-semibold">Get in Touch</h2>
-          <p className="mt-4 text-gray-400">I&apos;d love to hear from you! Let&apos;s connect.</p>
-          <motion.a
-            href="mailto:youremail@example.com"
-            className="mt-6 inline-block px-8 py-3 bg-gray-600 rounded-md text-white font-semibold shadow-md hover:shadow-lg"
-            whileHover={{ scale: 1.2 }}
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <motion.section
+            ref={ref}
+            className="relative min-h-screen snap-start bg-gray-50 p-8 flex items-center justify-center overflow-hidden"
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={animationVariants}
+            transition={{ duration: 1.5 }}
           >
-            Contact Me
-          </motion.a>
-        </div>
-      </section>
+            <div className="relative z-10 text-center">
+              <h2 className="text-4xl font-bold text-gray-800">Get in Touch</h2>
+              <p className="mt-4 text-gray-600 text-lg">
+                Feel free to reach out and connect!
+              </p>
+              <motion.a
+                href="mailto:youremail@example.com"
+                className="mt-6 inline-block px-8 py-3 bg-gray-800 text-white font-semibold rounded-md shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.2 }}
+              >
+                Contact Me
+              </motion.a>
+            </div>
+          </motion.section>
+        )}
+      </InView>
 
       {/* Footer */}
-      <footer className="bg-gray-700 text-gray-400 py-4 text-center">
+      <footer className="bg-gray-800 text-gray-300 py-4 text-center">
         <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
       </footer>
     </div>
