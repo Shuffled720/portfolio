@@ -11,6 +11,32 @@ export default function Home() {
 
   return (
     <div className="font-sans snap-y snap-mandatory h-screen overflow-y-scroll relative bg-gray-50 scroll-smooth">
+      {/* Background Animation */}
+      <div className="fixed inset-0 z-0 overflow-hidden">
+        <div className="absolute w-full h-full bg-gradient-to-br from-purple-300 via-blue-300 to-gray-100 opacity-20 animate-pulse"></div>
+        <div className="absolute w-96 h-96 bg-gradient-radial from-blue-500 to-transparent rounded-full top-1/4 left-1/4 opacity-10 animate-spin-slow"></div>
+        <div className="absolute w-80 h-80 bg-gradient-radial from-pink-500 to-transparent rounded-full bottom-1/3 right-1/4 opacity-10 animate-spin-reverse-slow"></div>
+      </div>
+
+      <style>
+        {`
+          @keyframes spin-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+          @keyframes spin-reverse-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+          }
+          .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+          }
+          .animate-spin-reverse-slow {
+            animation: spin-reverse-slow 25s linear infinite;
+          }
+        `}
+      </style>
+
       {/* Custom Scrollbar */}
       <style>
         {`
@@ -35,7 +61,7 @@ export default function Home() {
       </style>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen snap-start bg-gray-50 flex items-center justify-center">
+      <section className="relative min-h-screen snap-start  flex items-center justify-center">
         <div className="relative z-10 text-center">
           <motion.h1
             className="text-5xl md:text-6xl font-bold text-gray-800"
@@ -67,7 +93,7 @@ export default function Home() {
         {({ inView, ref }) => (
           <motion.section
             ref={ref}
-            className="relative min-h-screen snap-start bg-gray-50 p-8 flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen snap-start  p-8 flex items-center justify-center overflow-hidden"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={animationVariants}
@@ -84,7 +110,7 @@ export default function Home() {
       </InView>
 
       {/* Skills Section */}
-      <section className="relative min-h-screen snap-start bg-gray-50 text-gray-800 py-12 flex flex-col items-center overflow-hidden">
+      <section className="relative min-h-screen snap-start  text-gray-800 py-12 flex flex-col items-center overflow-hidden">
         <div className="relative z-10">
           <h2 className="text-4xl font-semibold mb-6">Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -119,7 +145,7 @@ export default function Home() {
         {({ inView, ref }) => (
           <motion.section
             ref={ref}
-            className="relative min-h-screen snap-start bg-gray-50 p-8 flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen snap-start  p-8 flex items-center justify-center overflow-hidden"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={animationVariants}
@@ -151,7 +177,7 @@ export default function Home() {
         {({ inView, ref }) => (
           <motion.section
             ref={ref}
-            className="relative min-h-screen snap-start bg-gray-50 p-8 flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen snap-start  p-8 flex items-center justify-center overflow-hidden"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={animationVariants}
