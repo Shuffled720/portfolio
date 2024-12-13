@@ -78,7 +78,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5 }}
           >
-            Hi, I'm Vishal Kumar, a final-year Electrical Engineering student at IIT Indore, passionate about web development and software engineering.
+            Hi, I&apos;m Vishal Kumar, a final-year Electrical Engineering student at IIT Indore, passionate about web development and software engineering.
           </motion.p>
           <Link href="#projects">
             <motion.button
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="relative z-10 max-w-2xl mx-auto text-center">
               <h2 className="text-4xl font-bold text-gray-800">About Me</h2>
               <p className="mt-4 text-gray-600 text-lg">
-                I'm Vishal Kumar, a final-year Electrical Engineering student at IIT Indore. With a strong foundation in engineering principles, I've developed a keen interest in web and software development. My goal is to create scalable, efficient, and impactful solutions.
+                I&apos;m Vishal Kumar, a final-year Electrical Engineering student at IIT Indore. With a strong foundation in engineering principles, I&apos;ve developed a keen interest in web and software development. My goal is to create scalable, efficient, and impactful solutions.
               </p>
             </div>
           </motion.section>
@@ -192,7 +192,7 @@ export default function Home() {
             <div className="relative z-10 text-center">
               <h2 className="text-4xl font-bold text-gray-800">Get in Touch</h2>
               <p className="mt-4 text-gray-600 text-lg">
-                Let's connect and discuss opportunities to work together. I'm always open to learning and contributing to exciting projects.
+                Let&apos;s connect and discuss opportunities to work together. I&apos;m always open to learning and contributing to exciting projects.
               </p>
               <div className="flex justify-center gap-4">
 
