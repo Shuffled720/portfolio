@@ -11,8 +11,8 @@ import {
   Terminal,
   Zap,
   Cpu,
-  Globe2,
   Code2,
+  X,
 } from "lucide-react";
 
 interface Project {
@@ -781,19 +781,19 @@ export default function Portfolio() {
             <div className="flex justify-center gap-8">
               {[
                 {
-                  href: "https://github.com/vishalkumar",
+                  href: "https://github.com/Shuffled720/",
                   icon: Github,
                   label: "GitHub",
                 },
                 {
-                  href: "https://linkedin.com/in/vishalkumar",
+                  href: "https://www.linkedin.com/in/vishal-shuffled72/",
                   icon: Linkedin,
                   label: "LinkedIn",
                 },
                 {
-                  href: "https://twitter.com/vishalkumar",
-                  icon: Globe2,
-                  label: "Twitter",
+                  href: "https://x.com/VishalKuma72",
+                  icon: X,
+                  label: "X",
                 },
               ].map(({ href, icon: Icon, label }) => (
                 <motion.a
