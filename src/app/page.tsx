@@ -750,7 +750,7 @@ export default function Portfolio() {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <motion.a
-                href="mailto:vishal.kumar@iiti.ac.in"
+                href="mailto:shuffled720@gmail.com"
                 className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-black hover:bg-gray-100 transition-all duration-300 font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
