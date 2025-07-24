@@ -463,8 +463,9 @@ export default function Portfolio() {
             >
               <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed font-light">
                 Full-stack engineer crafting high-performance applications with
-                modern technologies. Currently at IIT Indore, building
-                experiences that matter.
+                modern technologies. Graduate from IIT Indore, building
+                impactful digital systems across fintech, education, and
+                enterprise.
               </p>
             </motion.div>
 
