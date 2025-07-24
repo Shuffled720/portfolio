@@ -39,15 +39,13 @@ export const metadata: Metadata = {
     "backend development",
     "UI/UX design",
   ],
-  authors: [
-    { name: "Vishal Kumar", url: "https://vishalshuffled.vercel.app/" },
-  ],
+  authors: [{ name: "Vishal Kumar", url: "https://vishalshuffled.vercel.app" }],
   creator: "Vishal Kumar",
-  metadataBase: new URL("https://vishalshuffled.vercel.app/"),
+  metadataBase: new URL("https://vishalshuffled.vercel.app"),
   openGraph: {
     title: "Vishal Kumar | Developer Portfolio",
     description: "Explore my projects, skills, and achievements.",
-    url: "https://vishalshuffled.vercel.app/",
+    url: "https://vishalshuffled.vercel.app",
     siteName: "Vishal's Portfolio",
     images: [
       {
