@@ -148,10 +148,10 @@ export default function Portfolio() {
   ];
 
   const stats = [
-    { label: "Years Coding", value: "4+", icon: Code2 },
+    { label: "Years Coding", value: "3+", icon: Code2 },
     { label: "Projects Built", value: "20+", icon: Terminal },
     { label: "Technologies", value: "15+", icon: Cpu },
-    { label: "Open Source", value: "5+", icon: Github },
+    // { label: "Open Source", value: "5+", icon: Github },
   ];
 
   const workExperience = [
